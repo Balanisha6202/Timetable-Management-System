@@ -1,0 +1,143 @@
+<!DOCTYPE html> 
+<html> 
+    <style>
+     table.customers {
+        
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      table.customers td, table.customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+      
+      table.customers tr:nth-child(even){background-color: #f2f2f2;}
+      
+      table.customers tr:hover {background-color: #ddd;}
+      
+      table.customers th{
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        color: white;
+      }
+
+      table.customers thead td{
+       background-color:rgb(92, 192, 192);
+       font-family: Arial, Helvetica, sans-serif;
+       font-style: bold;
+       font-size:25px;
+
+      }
+      table.customers td.even {
+	background-color:rgb(92, 192, 192);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style:bold;
+    font-size:25px;
+}          table.customers td.odd {
+	background-color:rgb(207, 252, 156); 
+}
+body{
+    background-image: url("tt_bg.png");
+}
+td{
+	font-size: 20px;
+}
+    </style>
+
+<body> 
+	<table class ="customers" border="5" cellspacing="0" align="center"> 
+		<!--<caption>Timetable</caption>-->
+		<tr > <thead>
+			<td class = "day" align="center" height="100"
+				width="150"><br> 
+				<b>Day/Period</b></br> 
+			</td> 
+			<td align="center" height="100"
+				width="250"> 
+				<b>I<br>9:30-10:30</b> 
+			</td> 
+			<td align="center" height="100"
+				width="250"> 
+				<b>II<br>10:30-11:30</b> 
+			</td> 
+			<td align="center" height="100"
+				width="250"> 
+				<b>III<br>11:30-12:45</b> 
+			</td> 
+			<td align="center" height="100"
+				width="100"> 
+				<b><br>12:45-2:00</b> 
+			</td> 
+			<td align="center" height="100"
+				width="250"> 
+				<b>IV<br>2:00-4:00</b> 
+			</td> 
+        </thead>
+		</tr> 
+		<tr> 
+			<td class ="even" align="center" height="100"> 
+				<b>Monday</b></td> 
+			<td align="center" height="100"><%= s3.coursename %></br><%= s3.classroomid %></br><%= s3.FirstName %> <%= s3.LastName %></td> 
+			<td align="center" height="100"></td> 
+			<td align="center" height="100"><%= s2.coursename %></br><%= s2.classroomid %></br><%= s2.FirstName %> <%= s2.LastName %></td> 
+			<td rowspan="6" align="center" height="100"> 
+				<h2>L<br>U<br>N<br>C<br>H</h2> 
+			</td> 
+			<td colspan="3" align="center"
+				height="100"></td> 
+			
+		</tr> 
+		<tr> 
+			<td class ="even"align="center" height="100"> 
+				<b>Tuesday</b> 
+			</td> 
+			
+			<td align="center" height="100"><%= s1.coursename %></br><%= s1.classroomid %></br><%= s1.FirstName %> <%= s1.LastName %></td> 
+			<td align="center" height="100"><%= s3.coursename %></br><%= s3.classroomid %></br><%= s3.FirstName %> <%= s3.LastName %></td> 
+			<td align="center" height="100"></td> 
+			
+			<td class ="odd" colspan="3" align="center"
+				height="100">LAB</br><%= s2.coursename %></br><%= s2.classroomid %></br><%= s2.FirstName %> <%= s2.LastName %></td> 
+		</tr> 
+		<tr> 
+			<td class ="even" align="center" height="100"> 
+				<b>Wednesday</b> 
+			</td> 
+			<td align="center" height="100"><%= s2.coursename %></br><%= s2.classroomid %></br><%= s2.FirstName %> <%= s2.LastName %></td> 
+			<td align="center" height="100"></td> 
+			<td align="center" height="100"><%= s3.coursename %></br><%= s3.classroomid %></br><%= s3.FirstName %> <%= s3.LastName %></td> 
+		
+			<td colspan="3" align="center"
+				height="100">
+			</td> 
+		</tr> 
+		<tr> 
+			<td class ="even" align="center" height="100"> 
+				<b>Thursday</b> 
+			</td> 
+			<td align="center" height="100"></td> 
+			<td align="center" height="100"><%= s2.coursename %></br><%= s2.classroomid %></br><%= s2.FirstName %> <%= s2.LastName %></td> 
+			<td align="center" height="100"></td> 
+			<td class ="odd" colspan="3" align="center"
+				height="100">LAB</br><%= s3.coursename %></br><%= s3.classroomid %></br><%= s3.FirstName %> <%= s3.LastName %>
+			</td> 
+			 
+		</tr> 
+		<tr> 
+			<td class ="even" align="center" height="100"> 
+				<b>Friday</b> 
+			</td> 
+			<td align="center" height="100"></td> 
+			<td align="center" height="100"><%= s3.coursename %></br><%= s3.classroomid %></br><%= s3.FirstName %> <%= s3.LastName %></td> 
+			<td align="center" height="100"><%= s1.coursename %></br><%= s1.classroomid %></br><%= s1.FirstName %> <%= s1.LastName %></td> 
+			
+			<td colspan="3" align="center"
+				height="100"></td> 
+		</tr> 
+	
+	</table> 
+</body> 
+
+</html> 

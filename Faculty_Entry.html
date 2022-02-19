@@ -1,0 +1,150 @@
+<html>
+    <head>
+        <title>Faculty Entry</title>
+        <link rel="stylesheet" href="bootstrap.css">
+        <link rel="stylesheet" href="Faculty_Entry_CSS.css">
+    </head>
+    <body>
+        <style>
+            .container{
+                font-size: 150%;
+            }
+            .pad{
+                padding-bottom: 2%;
+            }
+            #formbase{
+                background-color: burlywood; 
+            }
+            #reg{
+               background-image: url(images.jpg);
+               text-shadow: 2px 2px gainsboro;
+               margin-bottom: 0;
+               color: black;
+            }
+        </style>
+        <div class="jumbotron" id="reg">
+            <div class="container">
+                <h1>Time Table Management System</h1>
+                <h2>Faculty Details Entry</h2>
+            </div>
+        </div>
+       <div class="jumbotron container" id="formbase" style="padding-top: 10px;">
+        <form name="Faculty_Entry" action="/facultydata" method="POST">
+            <div class="pad">Faculty ID: <input type="text" name="FacID" id="FacID" required></div>
+            <div class="pad">First Name: <input type="text" name="FirstName" id="FirstName" required></div>
+            <div class="pad">Last Name: <input type="text" name="LastName" id="LastName"></div>
+            <div class="pad">Date of Birth: <input type="date" name="dob" id="dob" min="1960-01-01" max="1997-12-31"></div>
+            <div class="pad">Contact: <input type="text" id="numb" name="numb" required></div>
+            <div class="pad">Department: 
+                <select name="dept" id="dept" onchange="showDiv(this)">
+                    <option value="0">---</option>
+                    <option value="CSE">Computer Science Engineering</option>
+                    <option value="ECE">Electrical and Communication Engineering</option>
+                    <option value="EEE">Electrical and Electronical Engineering</option>
+                </select>
+            </div>
+            <!--CSE Courses-->
+            <div id="1" style="display:none">
+                <div class="pad">Select 3 courses of your Expertise:</div>
+                <label class="labelled">Data Structures
+                    <input type=checkbox name="CSE[]" value="CSE1" onclick='chkcontrol(0)';><span class="checkmark"></span></label>
+                <label class="labelled">Computer Programming
+                    <input type=checkbox name="CSE[]" value="CSE2" onclick='chkcontrol(1)';><span class="checkmark"></span></label>
+                <label class="labelled">Computer System Essentials
+                    <input type=checkbox name="CSE[]" value="CSE3" onclick='chkcontrol(2)';><span class="checkmark"></span></label>
+                <label class="labelled">Object Oriented Paradigm
+                    <input type=checkbox name="CSE[]" value="CSE4" onclick='chkcontrol(3)';><span class="checkmark"></span></label>
+                <label class="labelled">Theory of Computation
+                    <input type=checkbox name="CSE[]" value="CSE5" onclick='chkcontrol(4)';><span class="checkmark"></span></label>
+                <label class="labelled">Database Management System
+                    <input type=checkbox name="CSE[]" value="CSE6" onclick='chkcontrol(5)';><span class="checkmark"></span></label>
+                <label class="labelled">Embedded Systems
+                    <input type=checkbox name="CSE[]" value="CSE7" onclick='chkcontrol(6)';><span class="checkmark"></span></label>
+                <label class="labelled">Computer Security
+                    <input type=checkbox name="CSE[]" value="CSE8" onclick='chkcontrol(7)';><span class="checkmark"></span></label>
+                <label class="labelled">Computer Networks
+                    <input type=checkbox name="CSE[]" value="CSE9" onclick='chkcontrol(8)';><span class="checkmark"></span></label>
+                <label class="labelled">Software Engineering
+                    <input type=checkbox name="CSE[]" value="CSE10" onclick='chkcontrol(9)';><span class="checkmark"></span></label>
+                <label class="labelled">Compiler Design
+                    <input type=checkbox name="CSE[]" value="CSE11" onclick='chkcontrol(10)';><span class="checkmark"></span></label>
+                <label class="labelled">Distributed Systems
+                    <input type=checkbox name="CSE[]" value="CSE12" onclick='chkcontrol(11)';><span class="checkmark"></span></label>
+            </div>
+            <!--ECE Courses-->
+            <div id="2" style="display:none">
+                <div class="pad">Select 3 courses of your Expertise:</div>
+                <label class="labelled">Electronic Devices and Circuits
+                    <input type=checkbox name=ckb value=1 onclick='chkcontrol(0)';><span class="checkmark"></span></label>
+                <label class="labelled">Circuit Theory
+                    <input type=checkbox name=ckb value=2 onclick='chkcontrol(1)';><span class="checkmark"></span></label>
+                <label class="labelled">Analog Electronic Circuits
+                    <input type=checkbox name=ckb value=3 onclick='chkcontrol(2)';><span class="checkmark"></span></label>
+                <label class="labelled">Applied Electronics
+                    <input type=checkbox name=ckb value=4 onclick='chkcontrol(3)';><span class="checkmark"></span></label>
+                <label class="labelled">Digital Electronics and Systems
+                    <input type=checkbox name=ckb value=5 onclick='chkcontrol(4)';><span class="checkmark"></span></label>
+                <label class="labelled">Signals and System
+                    <input type=checkbox name=ckb value=6 onclick='chkcontrol(5)';><span class="checkmark"></span></label>
+                <label class="labelled">Digital Signal Processing
+                    <input type=checkbox name=ckb value=7 onclick='chkcontrol(6)';><span class="checkmark"></span></label>
+                <label class="labelled">Communication Theory
+                    <input type=checkbox name=ckb value=8 onclick='chkcontrol(7)';><span class="checkmark"></span></label>
+                <label class="labelled">Linear Integrated Circuits
+                    <input type=checkbox name=ckb value=9 onclick='chkcontrol(8)';><span class="checkmark"></span></label>
+                <label class="labelled">Microcontrollers and Interfacing
+                    <input type=checkbox name=ckb value=10 onclick='chkcontrol(9)';><span class="checkmark"></span></label>
+            </div>
+            <!--EEE Courses-->
+            <div id="3" style="display:none">
+                <div class="pad">Select 3 courses of your Expertise:</div>
+                <label class="labelled">Electric Circuits
+                    <input type=checkbox name=ckb value=1 onclick='chkcontrol(0)';><span class="checkmark"></span></label>
+                <label class="labelled">Digital Systems
+                    <input type=checkbox name=ckb value=2 onclick='chkcontrol(1)';><span class="checkmark"></span></label>
+                <label class="labelled">Electronic Circuits
+                    <input type=checkbox name=ckb value=3 onclick='chkcontrol(2)';><span class="checkmark"></span></label>
+                <label class="labelled">Electrical Measurements
+                    <input type=checkbox name=ckb value=4 onclick='chkcontrol(3)';><span class="checkmark"></span></label>
+                <label class="labelled">Electromagnetic Theory
+                    <input type=checkbox name=ckb value=5 onclick='chkcontrol(4)';><span class="checkmark"></span></label>
+                <label class="labelled">Signals and System
+                    <input type=checkbox name=ckb value=6 onclick='chkcontrol(5)';><span class="checkmark"></span></label>
+                <label class="labelled">Control Systems
+                    <input type=checkbox name=ckb value=7 onclick='chkcontrol(6)';><span class="checkmark"></span></label>
+                <label class="labelled">Power Electronics
+                    <input type=checkbox name=ckb value=8 onclick='chkcontrol(7)';><span class="checkmark"></span></label>
+                <label class="labelled">Electric Drives and Control
+                    <input type=checkbox name=ckb value=9 onclick='chkcontrol(8)';><span class="checkmark"></span></label>
+                <label class="labelled">Electrical Energy Systems
+                    <input type=checkbox name=ckb value=10 onclick='chkcontrol(9)';><span class="checkmark"></span></label>
+            </div>
+            <!--Final Submit-->
+            <input type="submit" name="submit" class="btn btn-primary btn-lg"></input>
+        </form>
+       </div>
+       <!--Selection JavaScript for Deptwise Courses-->
+       <script type="text/javascript">
+        function showDiv(select){
+            //CSE
+               if(select.value=="CSE"){
+                    document.getElementById("1").style.display = "block";
+               } else{
+                    document.getElementById("1").style.display = "none";
+              }
+           //ECE
+           if(select.value=="ECE"){
+                    document.getElementById("2").style.display = "block";
+               } else{
+                    document.getElementById("2").style.display = "none";
+              }
+           //EEE
+           if(select.value=="EEE"){
+                    document.getElementById("3").style.display = "block";
+               } else{
+                    document.getElementById("3").style.display = "none";
+              }               
+        } 
+        </script>
+    </body>
+</html>

@@ -1,0 +1,110 @@
+<html>
+    <title>Time Table Management</title>
+    <style>
+        h1{
+            font-size: 60px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color:  rgb(2, 29, 29);
+            
+            text-align: center;
+
+        }
+        body{
+            background-image: url("save.jpg");
+            background-size: 90pc;
+            
+        }
+        div{
+            text-align: center;
+            
+            font-family: Arial, Helvetica, sans-serif;
+            color:rgb(4, 51, 51);
+            font-size: 60px;
+         
+        }
+        
+        p{
+            font-size:45px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color:rgb(7, 61, 68);
+            text-shadow: 2px 2px 5px rgb(194, 144, 8)
+        }
+        input[type=text], select {
+  width: 24%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+         
+            .button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: rgb(65, 4, 41);;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color:rgb(65, 4, 41);}
+
+.button:active {
+  background-color:rgb(65, 4, 41);;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+a:link, a:visited {
+  background-color: rgb(65, 4, 41);;
+  color: white;
+  font-size: 25px;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color:rgb(65, 4, 41);
+}
+
+    </style>
+    <body>
+    </br>
+
+    </br></br></br></br><h1>Students Time Table Portal</h1></br>
+    
+    <div>
+        <form action="/student" method = "POST">
+            <label for="Year">Year</label>
+          <select id="Year" name="Year">
+            <option value="1">First Year</option>
+            <option value="2">Second Year</option>
+            <option value="3">Third Year</option>
+            <option value="4">Furth Year</option>
+          </select>
+        </br></br></br></br>
+      
+        <label for="Department">Department</label>
+        <select id="Department" name="Department">
+          <option value="CSE">Computer Science</option>
+          <option value="ECE">Electronics and Communication </option>
+          <option value="EEE">Electrical and Electronics</option>
+        </select>
+        </br></br></br>
+        <button class="button" name="submit"><a>Submit</a></button>
+        </form>
+      </div>
+</br>
+
+
+    </body>
+    
+</html>

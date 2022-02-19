@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Student Entry</title>
+        <link rel="stylesheet" href="bootstrap.css">
+    </head>
+    <body>
+        <style>
+            .container{
+                font-size: 150%;
+            }
+            .pad{
+                padding-bottom: 2%;
+            }
+            #formbase{
+                background-color: burlywood; 
+            }
+            #reg{
+               background-image: url(images.jpg);
+               text-shadow: 2px 2px gainsboro;
+               margin-bottom: 0;
+               color: black;
+            }
+        </style>
+        <div class="jumbotron" id="reg">
+            <div class="container">
+                <h1>Time Table Management System</h1>
+                <h2>Student Details Entry</h2>
+            </div>
+        </div>
+       <div class="jumbotron container" id="formbase" style="padding-top: 10px;">
+        <form name="Faculty_Entry" action="/studentdata" method="POST">
+            <div class="pad">Student ID: <input type="text" name="StuID" id="StuID" required></div>
+            <div class="pad">First Name: <input type="text" name="SFirstName" id="SFirstName" required></div>
+            <div class="pad">Last Name: <input type="text" name="SLastName" id="SLastName"></div>
+            <div class="pad">Department: 
+                <select name="dept" id="dept">
+                    <option value="0">---</option>
+                    <option value="CSE">Computer Science Engineering</option>
+                    <option value="ECE">Electrical and Communication Engineering</option>
+                    <option value="EEE">Electrical and Electronical Engineering</option>
+                </select>
+            </div>
+            <div class="pad">Year:
+                <select name="year" id="year">
+                    <option value="0">---</option>
+                    <option value="1">First year</option>
+                    <option value="2">Second year</option>
+                    <option value="3">Third year</option>
+                    <option value="4">Fourth year</option>
+                </select>
+            </div>
+            
+            <!--Final Submit-->
+            <input type="submit" name="submit" class="btn btn-primary btn-lg"></input>
+        </form>
+       </div>
+      
+    </body>
+</html>
